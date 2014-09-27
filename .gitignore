@@ -3,3 +3,5 @@ resources
 build
 packages
 .sencha
+Readme.md
+bootstrap*
