@@ -70,12 +70,20 @@
      *
      *      }
      */
-    "css": [
-        {
-            "path": "resources/css/app.css",
-            "update": "delta"
-        }
-    ],
+    "css": [{
+        "path": "resources/css/app.css",
+        "update": "delta"
+    },{
+        "path": "resources/css/cupertino.css",
+        "platform": ["ios"],
+        "update": "delta",
+        "theme": "Cupertino"
+    },{
+        "path": "resources/css/mountainview.css",
+        "platform": ["android"],
+        "update": "delta",
+        "theme": "Moutainview"
+    }],
 
     /**
      * Used to automatically generate cache.manifest (HTML 5 application cache manifest) file when you build
