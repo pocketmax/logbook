@@ -12,7 +12,8 @@ Ext.define('LogBook.view.Keypad', {
             xtype: 'container',
             layout: 'hbox',
             defaults: {
-                xtype: 'button'
+                xtype: 'button',
+                flex: 1
             },
             items: [{
                 text: '7'
@@ -25,7 +26,8 @@ Ext.define('LogBook.view.Keypad', {
             xtype: 'container',
             layout: 'hbox',
             defaults: {
-                xtype: 'button'
+                xtype: 'button',
+                flex: 1
             },
             items: [{
                 text: '4'
@@ -38,7 +40,8 @@ Ext.define('LogBook.view.Keypad', {
             xtype: 'container',
             layout: 'hbox',
             defaults: {
-                xtype: 'button'
+                xtype: 'button',
+                flex: 1
             },
             items: [{
                 text: '1'
@@ -51,16 +54,19 @@ Ext.define('LogBook.view.Keypad', {
             xtype: 'container',
             layout: 'hbox',
             defaults: {
-                xtype: 'button'
+                xtype: 'button',
+                flex: 1
             },
             items: [{
                 iconCls: 'arrow_left',
-                itemId: 'back'
+                itemId: 'back',
+                ui: 'backkey'
             }, {
                 text: '0'
             },{
-                iconCls: 'action',
+                iconCls: 'arrow_right',
                 itemId: 'enter',
+                ui: 'enterkey',
                 disabled: true
             }]
         }]
