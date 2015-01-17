@@ -35,12 +35,13 @@ Ext.define('LogBook.controller.Dropoff', {
                         alert('carrier is a required field');
                         return false;
                     } else {
-                        console.log(results.getStore());
-                        results.getStore().add({
-                            aptNum: Ext.Number.from(val,0),
-                            carrier: formData.carrier
-                        });
-//                        results.getStore().sync();
+                        for(var i = 1; i<=formData.totalPackages; i++){
+                            results.getStore().add({
+                                aptNum: Ext.Number.from(val,0),
+                                carrier: formData.carrier
+                            });
+                        }
+                        panel.down('formpanel').setValues({totalPackages: 1});
                         console.log('add package with apt: ' + Ext.Number.from(val,0) + ' and carrier: ' + formData.carrier);
                     }
                     return true;

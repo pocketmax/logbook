@@ -39,12 +39,18 @@ Ext.define('LogBook.view.Dropoff', {
                 name : 'carrier',
                 value: 'USPS',
                 label: 'USPS'
-            },{
+            }, {
                 xtype: 'radiofield',
-                name : 'carrier',
+                name: 'carrier',
                 value: 'ONTRAC',
                 label: 'ONTRAC',
                 labelWidth: '40%'
+            },{
+                xtype: 'numberfield',
+                name: 'totalPackages',
+                fieldLabel: 'Total Packages',
+                labelWidth: '180px',
+                value: 1
             },{
                 xtype: 'keypad'
             }]
