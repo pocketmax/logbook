@@ -24,37 +24,29 @@ Ext.define('LogBook.view.History', {
                 labelWidth: '100'
             },
             items: [{
-                xtype: 'label',
-                html: 'group by: ',
-                docked: 'left'
-            },{
-                xtype: 'radiofield',
-                name: 'groupby',
-                label: 'carrier',
-                value: 'carrier',
-                docked: 'left'
+                xtype: 'segmentedbutton',
+                itemId: 'groupby',
+                docked: 'left',
+                items: [{
+                    text: 'group by carrier',
+                    itemId: 'carrier'
+                }, {
+                    text: 'group by Apt #',
+                    itemId: 'aptNum',
+                    pressed: true
+                }]
             }, {
-                xtype: 'radiofield',
-                name: 'groupby',
-                label: 'Apt #',
-                value: 'aptNum',
-                docked: 'left'
-            }, {
-                xtype: 'label',
-                html: ' :order by',
-                docked: 'right'
-            },{
-                xtype: 'radiofield',
-                name: 'orderby',
-                label: 'Apt #',
-                value: 'aptNum',
-                docked: 'right'
-            },{
-                xtype: 'radiofield',
-                name: 'orderby',
-                label: 'carrier',
-                value: 'carrier',
-                docked: 'right'
+                xtype: 'segmentedbutton',
+                itemId: 'orderby',
+                docked: 'right',
+                items: [{
+                    text: 'order by carrier',
+                    itemId: 'carrier',
+                    pressed: true
+                }, {
+                    text: 'order by Apt #',
+                    itemId: 'aptNum'
+                }]
             }]
         },{
             xtype: 'list',

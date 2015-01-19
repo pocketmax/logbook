@@ -3,7 +3,9 @@ Ext.define('LogBook.controller.History', {
     
     config: {
         refs: {
-            
+            panel: 'historypanel',
+            results: 'historypanel list#results'
+
         },
         control: {
             'toolbar button#history': {
@@ -12,26 +14,21 @@ Ext.define('LogBook.controller.History', {
                     maindeck.setActiveItem('history');
                 }
             },
-            'toolbar#historyheading radiofield[name=groupby]': {
-                check: function(itm){
+            'toolbar#historyheading #groupby': {
+                toggle: function(seg, itm){
                     console.log(itm);
-                    console.log(itm.getValue());
-                    var results = itm.up('formpanel').down('list#results');
-                    results.getStore().setGroupField(itm.getValue()).load();
-//                    var maindeck = Ext.getCmp('maindeck.');
-//                    maindeck.setActiveItem('history');
+                    console.log(itm.getItemId());
+                    var results = this.getResults();
+                    results.getStore().setGroupField(itm.getItemId()).load();
                 }
             },
-            'toolbar#historyheading radiofield[name=orderby]': {
-                check: function(itm){
+            'toolbar#historyheading #orderby': {
+                toggle: function(seg, itm){
                     console.log(itm);
-                    console.log(itm.getValue());
-                    var results = itm.up('formpanel').down('list#results');
-                    results.getStore().sort(itm.getValue());
+                    console.log(itm.getItemId());
+                    var results = this.getResults();
+                    results.getStore().sort(itm.getItemId());
                     results.getStore().load();
-
-//                    var maindeck = Ext.getCmp('maindeck.');
-//                    maindeck.setActiveItem('history');
                 }
             }
         }
